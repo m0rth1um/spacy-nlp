@@ -1,6 +1,8 @@
 from collections import OrderedDict
-import de_core_news_md
-nlp = de_core_news_md.load()
+
+import spacy
+
+nlp = spacy.load('enapt')
 
 # Useful properties, summary of the docs from https://spacy.io
 
@@ -111,6 +113,7 @@ def parse_sentence(sentence):
         ("len", len(doc)),
         ("tokens", [token.text for token in doc]),
         ("noun_phrases", [token.text for token in doc.noun_chunks]),
+        ("entities", [(ent.label_, ent.text) for ent in doc.ents]),
         ("parse_tree", parse_tree(doc)),
         ("parse_list", parse_list(doc))
     ])

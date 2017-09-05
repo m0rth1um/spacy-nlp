@@ -1,8 +1,7 @@
 from collections import OrderedDict
 
-import spacy
-
-nlp = spacy.load('enapt')
+import de_enapt
+nlp = de_enapt.load()
 
 # Useful properties, summary of the docs from https://spacy.io
 

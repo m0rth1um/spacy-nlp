@@ -1,7 +1,10 @@
 from collections import OrderedDict
+from pathlib import Path
 
-import de_enapt
-nlp = de_enapt.load()
+import spacy
+# TODO: get this path from config/dynamically
+input_directory = Path('/Users/morth/src/enaptfix-bot/spacy/de_enapt_model')
+nlp = spacy.load('de_enapt', path=input_directory)
 
 # Useful properties, summary of the docs from https://spacy.io
 
